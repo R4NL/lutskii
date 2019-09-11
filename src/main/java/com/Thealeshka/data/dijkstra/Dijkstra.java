@@ -7,7 +7,7 @@ import com.Thealeshka.data.dijkstra.Graph.Node;
 import java.util.*;
 
 public class Dijkstra {
-    public  Graph calculateShortestPathFromSource(Graph graph, Node source) {
+    public Graph calculateShortestPathFromSource(Graph graph, Node source) {
         source.setDistance(0);
 
         Set<Node> settledNodes = new HashSet<>();
@@ -18,7 +18,7 @@ public class Dijkstra {
         while (unsettledNodes.size() != 0) {
             Node currentNode = getLowestDistanceNode(unsettledNodes);
             unsettledNodes.remove(currentNode);
-            for (Map.Entry< Node, Integer> adjacencyPair:
+            for (Map.Entry<Node, Integer> adjacencyPair :
                     currentNode.getAdjacentNodes().entrySet()) {
                 Node adjacentNode = adjacencyPair.getKey();
                 Integer edgeWeight = adjacencyPair.getValue();
@@ -32,10 +32,10 @@ public class Dijkstra {
         return graph;
     }
 
-    private  Node getLowestDistanceNode(Set < Node > unsettledNodes) {
+    private Node getLowestDistanceNode(Set<Node> unsettledNodes) {
         Node lowestDistanceNode = null;
         int lowestDistance = Integer.MAX_VALUE;
-        for (Node node: unsettledNodes) {
+        for (Node node : unsettledNodes) {
             int nodeDistance = node.getDistance();
             if (nodeDistance < lowestDistance) {
                 lowestDistance = nodeDistance;
@@ -45,8 +45,8 @@ public class Dijkstra {
         return lowestDistanceNode;
     }
 
-    private  void calculateMinimumDistance(Node evaluationNode,
-                                                 Integer edgeWeigh, Node sourceNode) {
+    private void calculateMinimumDistance(Node evaluationNode,
+                                          Integer edgeWeigh, Node sourceNode) {
         Integer sourceDistance = sourceNode.getDistance();
         if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
             evaluationNode.setDistance(sourceDistance + edgeWeigh);
