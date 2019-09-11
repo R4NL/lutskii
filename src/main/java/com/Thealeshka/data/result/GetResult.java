@@ -35,7 +35,7 @@ public class GetResult {
         }
 
         for (int i = 0; i <= 12; i++) {
-            System.out.println(i+"  "+diameter.get(i)+" "+averageDiameter.get(i)+" "+power.get(i)+" "+cost.get(i)+" "+topologicalTraffic.get(i));
+            System.out.println(((i+1)*9)+"  "+diameter.get(i)+" "+averageDiameter.get(i)+" "+power.get(i)+" "+cost.get(i)+" "+topologicalTraffic.get(i));
         }
     }
 

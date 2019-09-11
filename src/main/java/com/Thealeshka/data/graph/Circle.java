@@ -1,6 +1,6 @@
 package com.Thealeshka.data.graph;
 
-import com.Thealeshka.data.cluster.Cluster;
+import com.Thealeshka.data.cluster.ClusterForLab1;
 import com.Thealeshka.data.cluster.vertex.Vertex;
 import com.Thealeshka.data.cluster.vertex.comparators.VertexComparator;
 
@@ -35,9 +35,9 @@ public class Circle {
 
     public List<Vertex> generateResultList(int clusterCount) {
         this.clusterCount = clusterCount;
-        Cluster cluster = new Cluster();
+        ClusterForLab1 clusterForLab1 = new ClusterForLab1();
         for (int i = 0; i < clusterCount; i++) {
-            for (Vertex vertex : cluster.createCluster(i)) {
+            for (Vertex vertex : clusterForLab1.createCluster(i)) {
                 resultList.add(add(vertex, i));
             }
         }

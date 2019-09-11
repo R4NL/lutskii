@@ -5,10 +5,10 @@ import com.Thealeshka.data.cluster.vertex.comparators.VertexComparator;
 
 import java.util.*;
 
-public class Cluster {
+public class ClusterForLab1 {
     private List<Vertex> list;
 
-    public Cluster() {
+    public ClusterForLab1() {
     }
 
     public List<Vertex> createCluster(int startPoint) {
