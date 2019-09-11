@@ -35,7 +35,7 @@ public class GetResult {
         }
 
         for (int i = 0; i <= 12; i++) {
-            System.out.println(((i+1)*9)+"  "+diameter.get(i)+" "+averageDiameter.get(i)+" "+power.get(i)+" "+cost.get(i)+" "+topologicalTraffic.get(i));
+            System.out.println(((i + 1) * 9) + "  " + diameter.get(i) + " " + averageDiameter.get(i) + " " + power.get(i) + " " + cost.get(i) + " " + topologicalTraffic.get(i));
         }
     }
 
@@ -60,7 +60,7 @@ public class GetResult {
         for (Vertex vertex : result) {
             data += vertex.getNeighboringVertex().size();
         }
-        cost.add(Math.min(data/2, (diameter.get(diameter.size() - 1) * power.get(power.size() - 1) * diameter.size())));
+        cost.add(Math.min(data / 2, (diameter.get(diameter.size() - 1) * power.get(power.size() - 1) * diameter.size())));
     }
 
     private void setTopologicalTraffic() {
