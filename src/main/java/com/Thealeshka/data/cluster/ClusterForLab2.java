@@ -1,7 +1,6 @@
 package com.Thealeshka.data.cluster;
 
 import com.Thealeshka.data.cluster.vertex.Vertex;
-import com.Thealeshka.data.cluster.vertex.comparators.VertexComparator;
 
 import java.util.*;
 
@@ -27,7 +26,7 @@ public class ClusterForLab2 {
                 list.get(i).setNeighboringVertex(list.get(matrix[i][j] - 1).getId());
             }
         }
-        Collections.sort(list, new VertexComparator());
+        Collections.sort(list, ((o1, o2) -> o1.getId() - o2.getId()));
         return list;
     }
 }

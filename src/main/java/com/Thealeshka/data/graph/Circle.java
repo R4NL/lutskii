@@ -2,28 +2,18 @@ package com.Thealeshka.data.graph;
 
 import com.Thealeshka.data.cluster.ClusterForLab1;
 import com.Thealeshka.data.cluster.vertex.Vertex;
-import com.Thealeshka.data.cluster.vertex.comparators.VertexComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Circle {
+public class Circle implements Graph {
     private int clusterCount;
     private List<Integer> firstList;
     private List<Integer> lastList;
     private List<Vertex> resultList;
 
-    public Circle(int clusterCount) {
-        this.clusterCount = clusterCount;
-        start();
-    }
-
-    public Circle() {
-        start();
-    }
-
-    private void start() {
+    {
         resultList = new ArrayList<>();
         firstList = new ArrayList<>();
         lastList = new ArrayList<>();
@@ -33,6 +23,14 @@ public class Circle {
         }
     }
 
+    public Circle(int clusterCount) {
+        this.clusterCount = clusterCount;
+    }
+
+    public Circle() {
+    }
+
+    @Override
     public List<Vertex> generateResultList(int clusterCount) {
         this.clusterCount = clusterCount;
         ClusterForLab1 clusterForLab1 = new ClusterForLab1();
@@ -42,7 +40,7 @@ public class Circle {
             }
         }
         makeCircle();
-        Collections.sort(resultList, new VertexComparator());
+        Collections.sort(resultList, ((o1, o2) -> o1.getId() - o1.getId()));
         return resultList;
     }
 

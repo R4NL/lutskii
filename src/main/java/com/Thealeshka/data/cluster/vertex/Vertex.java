@@ -1,6 +1,8 @@
 package com.Thealeshka.data.cluster.vertex;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Vertex {
     private Integer id;

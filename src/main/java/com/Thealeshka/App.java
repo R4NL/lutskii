@@ -9,6 +9,6 @@ import com.Thealeshka.data.result.GetResult;
  */
 public class App {
     public static void main(String[] args) {
-         new GetResult().getResult();
+        new GetResult().getResult();
     }
 }

@@ -1,7 +1,6 @@
 package com.Thealeshka.data.cluster;
 
 import com.Thealeshka.data.cluster.vertex.Vertex;
-import com.Thealeshka.data.cluster.vertex.comparators.VertexComparator;
 
 import java.util.*;
 
