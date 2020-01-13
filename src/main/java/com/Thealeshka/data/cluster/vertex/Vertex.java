@@ -8,17 +8,20 @@ public class Vertex {
     private Integer id;
     private List<Integer> neighboringVertex;
 
+    {
+        neighboringVertex = new ArrayList<Integer>();
+    }
+
     public Vertex() {
     }
 
     public Vertex(Integer id) {
-        neighboringVertex = new ArrayList<Integer>();
         this.id = id;
     }
 
     public Vertex(Integer id, List<Integer> neighboringVertex) {
         this.id = id;
-        this.neighboringVertex = neighboringVertex;
+
     }
 
     public Integer getId() {

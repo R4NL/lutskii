@@ -28,7 +28,6 @@ public class UseAlgorithm {
                 node.addDestination(nodeList.get(integer - 1), 1);
             }
         }
-
         Graph graph = new Graph();
         for (Node node : nodeList) {
             graph.addNode(node);
@@ -58,7 +57,6 @@ public class UseAlgorithm {
 
         }
         res /= calc;
-
         BigDecimal bd = new BigDecimal(Double.toString(res));
         bd = bd.setScale(3, RoundingMode.HALF_UP);
         return bd.doubleValue();

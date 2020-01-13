@@ -1,7 +1,6 @@
 package com.Thealeshka.data.result;
 
 import com.Thealeshka.data.cluster.vertex.Vertex;
-import com.Thealeshka.data.dijkstra.Dijkstra;
 import com.Thealeshka.data.dijkstra.UseAlgorithm;
 import com.Thealeshka.data.graph.Circle;
 
@@ -24,17 +23,18 @@ public class GetResult {
 
     public void getResult() {
         newList();
-        for (int i = 0; i <= 12; i++) {
+        for (int i = 0; i <= 60; i++) {
             result = new Circle().generateResultList(i + 1);
-
             setDiameter();
             setAverageDiameter();
             setPower();
             setCost();
             setTopologicalTraffic();
+
         }
 
-        for (int i = 0; i <= 12; i++) {
+        for (int i = 0; i <= 60; i++) {
+            if(Math.sqrt((i + 1) * 9)%1==0)
             System.out.println(((i + 1) * 9) + "  " + diameter.get(i) + " " + averageDiameter.get(i) + " " + power.get(i) + " " + cost.get(i) + " " + topologicalTraffic.get(i));
         }
     }
