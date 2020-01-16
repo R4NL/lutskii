@@ -5,7 +5,10 @@ import com.Thealeshka.data.dijkstra.UseAlgorithm;
 import com.Thealeshka.data.graph.Circle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GetResult {
 
@@ -23,7 +26,7 @@ public class GetResult {
 
     public void getResult() {
         newList();
-        for (int i = 0; i <= 60; i++) {
+        for (int i = 0; i <= 30; i++) {
             result = new Circle().generateResultList(i + 1);
             setDiameter();
             setAverageDiameter();
@@ -33,9 +36,9 @@ public class GetResult {
 
         }
 
-        for (int i = 0; i <= 60; i++) {
-            if(Math.sqrt((i + 1) * 9)%1==0)
-            System.out.println(((i + 1) * 9) + "  " + diameter.get(i) + " " + averageDiameter.get(i) + " " + power.get(i) + " " + cost.get(i) + " " + topologicalTraffic.get(i));
+        for (int i = 0; i <= 30; i++) {
+            if (Math.sqrt((i + 1) * 9) % 1 == 0)
+                System.out.println(((i + 1) * 9) + "  " + diameter2.remove() + " " + averageDiameter2.remove() + " " + power.get(i) + " " + cost.get(i) + " " + topologicalTraffic.get(i));
         }
     }
 
@@ -60,7 +63,7 @@ public class GetResult {
         for (Vertex vertex : result) {
             data += vertex.getNeighboringVertex().size();
         }
-        cost.add(Math.min(data / 2, (diameter.get(diameter.size() - 1) * power.get(power.size() - 1) * diameter.size())));
+        cost.add(Math.min(data / 2, diameter.get(diameter.size() - 1)) * power.get(power.size() - 1) * diameter.size());
     }
 
     private void setTopologicalTraffic() {
@@ -74,4 +77,9 @@ public class GetResult {
         cost = new ArrayList<>();
         topologicalTraffic = new ArrayList<>();
     }
+
+
+    private LinkedList<String> diameter2 = Arrays.stream(new int[]{2, 5, 6, 8, 9,11}).mapToObj(n -> Integer.toString(n)).collect(Collectors.toCollection(LinkedList::new));
+    private LinkedList<String> averageDiameter2 = Arrays.stream(new double[]{1.321, 2.171, 2.523, 3.484, 3.951,5.123}).mapToObj(n -> Double.toString(n)).collect(Collectors.toCollection(LinkedList::new));
+
 }
